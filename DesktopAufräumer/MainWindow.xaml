@@ -1,0 +1,138 @@
+﻿<Window x:Class="DesktopAufräumer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopAufräumer"
+        mc:Ignorable="d"
+     
+   Title="DesktopCleaner" Height="900" Width="400">
+    <Border Padding="10">
+        <StackPanel>
+            
+            <!--Buttons-->           
+            <Grid>
+                                
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+            
+                <Button x:Name="AppyButton" Click="AppyButton_Click" Margin ="0 0 10 0" Grid.Column="0" Content="Apply" />
+                <Button x:Name="ResetButton" Click="ResetButton_Click" Grid.Column="1" Content="Reset" />
+                <Button Margin ="10 0 0 0" Grid.Column="2" Content="Refresh" />
+            </Grid>
+
+            <TextBlock Text="Pulse Properties" FontWeight="Bold" Margin="0 10"/>
+            
+            <!--Description-->
+            <TextBlock Text="Description"/>
+            <TextBox x:Name="DescriptionText" Padding="2"/>
+            
+            <!--Status and Revision-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Status-->
+                <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                    <TextBlock Text="Status"/>
+                    <TextBox IsReadOnly="True" Background="#eee" Padding="2"/>
+                </StackPanel>  
+
+                <!--Revision--> 
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Revision"/>
+                    <TextBox IsReadOnly="True" Background="#eee" Padding="2"/>
+                </StackPanel>
+
+
+            </Grid>
+
+            <!--Diretory-->
+            <TextBlock Text="Diretory"/>
+            <TextBox IsReadOnly="True" Background="#eee" Padding="2"/>
+
+
+            <!--Diretory-->
+            <TextBlock Text="Diretory" FontWeight="Bold" Margin="0 10"/>
+
+            <!--Diretory Choose-->
+            <TextBlock Text="Choose your Directory"/>
+            <ComboBox Padding="2"/>
+
+            
+            <!--Wich Document-->
+            <TextBlock Text="Documents" FontWeight="Bold" Margin="0 10"/>
+
+            <!--Type of Document-->
+            <TextBlock Text="Type of Document" Margin="0 0 0 10"/>
+
+            <!--Checkboxes-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Columm 1-->
+                <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                    <CheckBox x:Name="txtCheckbox" Click="TxtCheckbox_Click" Content="*.txt" />
+                    <CheckBox x:Name="pngCheckbox" Click="PngCheckbox_Click" Content="*.png" />
+                    <CheckBox x:Name="docxCheckbox" Click="DocxCheckbox_Click" Content="*.docx" />
+                </StackPanel>
+
+                <!--Columm 2-->
+                <StackPanel Grid.Column="1">
+                    <CheckBox x:Name="jpgCheckbox" Click="JpgCheckbox_Click" Content="*.jpg" />
+                    <CheckBox x:Name="mp4Checkbox" Click="Mp4Checkbox_Click" Content="*.mp4" />
+                    <CheckBox x:Name="FolderCheckbox" Click="FolderCheckbox_Click" Content="Folder" /> 
+                </StackPanel>
+
+
+            </Grid>
+
+            <!--Lenght-->
+            <TextBlock Text="Lenght"/>
+            <TextBox Padding="2"/>
+
+            <!--Last Clean-->
+            <TextBlock Text="Last Clean"/>
+            <TextBox x:Name="DatetimeCleandedTextBox" Text =""  IsReadOnly="True" Background="#eee" Padding="2"/>
+
+            <!--Finish-->
+            <TextBlock Text="Finish"/>
+            <ComboBox SelectedIndex="0" Padding="2">
+                <ComboBoxItem>Painted</ComboBoxItem>
+                <ComboBoxItem>Not Painted</ComboBoxItem>
+            </ComboBox>
+
+            <!--Purchase Info-->
+            <TextBlock Text="Purchase Information"/>
+            <ComboBox SelectedIndex="0" Padding="2">
+                <ComboBoxItem>Rubber</ComboBoxItem>
+                <ComboBoxItem>Not Rubber</ComboBoxItem>
+            </ComboBox>
+
+            <!--Supplier Name-->
+            <TextBlock Text="Supplier Name"/>
+            <TextBox Padding="2"/>
+
+            <!--Supplier Code-->
+            <TextBlock Text="Supplier Code"/>
+            <TextBox Padding="2"/>
+
+            <!--Additional Information-->
+            <TextBlock Text="Founded Files" FontWeight="Bold" Margin="0 10"/>
+
+            <!--DesktopItems-->
+            <TextBlock Text="Files"/>
+            <TextBox x:Name="ListDesktopItems" IsReadOnly="true" Padding="2" TextChanged="ListDesktopItems_TextChanged"/>
+
+        </StackPanel>
+    </Border>
+
+</Window>
